@@ -1,0 +1,103 @@
+.army {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    box-shadow: 0 2px 24px 0 rgb(0 0 0 / 15%);
+    background-color: #ffffffc0 !important;
+    animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    height: 270px;
+    border-radius: 15px;
+    border: 2px solid rgba(69, 119, 28, 0.877);
+
+    display: flex;
+    overflow-x: scroll;
+}
+
+/* .army {
+    
+    padding: 3rem;
+} */
+
+.army::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+    background: transparent;
+    /* width: 10px;
+    height: 10px; */
+}
+
+.army::-webkit-scrollbar-thumb {
+    background: #201c29;
+    border-radius: 10px;
+    box-shadow: inset 2px 2px 2px hsla(0, 0%, 100%, .25), inset -2px -2px 2px rgba(0, 0, 0, .25);
+}
+
+.army::-webkit-scrollbar-track {
+    background: linear-gradient(90deg, #201c29, #201c29 1px, #17141d 0, #17141d);
+}
+
+
+.armyCard {
+    height: 290px;
+    width: 330px;
+    min-width: 190px;
+    padding: 1.5rem;
+    border-radius: 16px;
+    background: linear-gradient(90deg, #312844, #22443c 1px, #463b5c 0, #5a245c);
+    box-shadow: -1rem 0 3rem #000;
+    display: flex;
+    flex-direction: row;
+    transition: .2s;
+    margin: 0;
+    scroll-snap-align: start;
+    clear: both;
+    position: relative;
+}
+
+.armyCard:focus-within~.armyCard,
+.armyCard:hover~.armyCard {
+    transform: translateX(130px);
+}
+
+.armyCard:hover {
+    transform: translateY(-1rem);
+}
+
+.armyCard:not(:first-child) {
+    margin-left: -130px;
+}
+
+.armyCard_imgCard {
+    height: 100%;
+    width: 36%;
+}
+
+.armyCard_img {
+    height: 80%;
+    width: 80%;
+    border-right: 1px solid rgba(245, 245, 245, 0.178);
+}
+
+.armyCard_container {
+    height: 90%;
+    width: 64%;
+    text-align: left;
+    word-wrap: break-word;
+}
+
+.armyCard_container p {
+    margin: 0;
+    padding: 0;
+    margin-top: 5px;
+}
+
+.armyCard_container h4 {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 4px;
+    text-decoration: underline;
+}
