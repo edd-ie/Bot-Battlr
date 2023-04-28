@@ -13,13 +13,30 @@ export default function Profiles({setBotData, botData}){
     },[])
 
     function handleAddbot(botInfo){
-        setBotData([...botData,botInfo])
-    }   
+        let check=false;
+        botData.forEach(data =>{
+            if(data.id === botInfo.id){
+                check=true
+                return 0 ;
+            }
+        })
+        
+        if(check === false){
+            setBotData([...botData,botInfo])
+        }
+    }  
+    
+    function handleDelete(id){
+        let deleteData = dataset.filter(data=>data.id !== id)
+        setData(deleteData)
+        alert('Discharge Successful')
+    }
  
     const bots = dataset.map(bot=>{
         return(
             <div className="card" key={bot.id} onClick={()=>handleAddbot(bot)}>
                 <div className="imgCard">
+                    <button onClick={()=>handleDelete(bot.id)}>Discharge❌</button>
                     <img src={bot.avatar_url} alt={bot.name} className="img"/>
                 </div>
                 <div className="container">

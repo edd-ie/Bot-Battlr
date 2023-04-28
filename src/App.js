@@ -10,7 +10,7 @@ function App() {
 
   return (
     <div className="App">
-      <Army botData={botData}/>
+      <Army botData={botData} discharge={setBotData}/>
       <Profiles setBotData={setBotData} botData={botData}/>
     </div>
   );

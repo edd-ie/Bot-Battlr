@@ -2,11 +2,16 @@ import React from 'react';
 import './Army.css'
 
 
-export default function Army({botData}) {
+export default function Army({botData, discharge}) {
+
+  function handleDischarge(id){
+    let remaining = botData.filter(bot=>bot.id!==id)
+    discharge(remaining)
+  }
   
   const bots = botData.map(bot=>{
         return(
-            <div className="armyCard" key={bot.id}>
+            <div className="armyCard" key={`${bot.name}${bot.id}`} onClick={()=>handleDischarge(bot.id)}>
                 <div className="armyCard_imgCard">
                     <img src={bot.avatar_url} alt={bot.name} className="armyCard_img"/>
                 </div>
