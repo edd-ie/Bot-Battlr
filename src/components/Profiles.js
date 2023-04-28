@@ -30,16 +30,20 @@ export default function Profiles({setBotData, botData}){
         let deleteData = dataset.filter(data=>data.id !== id)
         setData(deleteData)
         alert('Discharge Successful')
+
+        fetch(`http://localhost:4000/bots/${id}`,{
+            method: 'DELETE'
+        })
     }
  
     const bots = dataset.map(bot=>{
         return(
-            <div className="card" key={bot.id} onClick={()=>handleAddbot(bot)}>
+            <div className="card" key={bot.id}>
                 <div className="imgCard">
                     <button onClick={()=>handleDelete(bot.id)}>Discharge❌</button>
                     <img src={bot.avatar_url} alt={bot.name} className="img"/>
                 </div>
-                <div className="container">
+                <div className="container"  onClick={()=>handleAddbot(bot)}>
                     <h4>{bot.name}</h4>
                     <p>HEALTH: {bot.health}</p>
                     <p>DAMAGE: {bot.damage}</p>

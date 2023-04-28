@@ -5,14 +5,14 @@
     width: 100%;
     z-index: 999;
     box-shadow: 0 2px 24px 0 rgb(0 0 0 / 15%);
-    background-color: #ffffffc0 !important;
+    background: #111111c0 !important;
     animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
     padding-top: 0px;
     padding-bottom: 0px;
     height: 270px;
     border-radius: 15px;
     border: 2px solid rgba(69, 119, 28, 0.877);
-
+    cursor: grab;
     display: flex;
     overflow-x: scroll;
 }
@@ -43,7 +43,7 @@
 
 .armyCard {
     height: 290px;
-    width: 330px;
+    width: 320px;
     min-width: 190px;
     padding: 1.5rem;
     border-radius: 16px;
